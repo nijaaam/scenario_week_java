@@ -2,6 +2,8 @@ package application;
 
 import java.io.IOException;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
@@ -37,7 +39,6 @@ public class RootLayout extends AnchorPane{
 
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
-
 		try {
 			fxmlLoader.load();
 
@@ -104,7 +105,17 @@ public class RootLayout extends AnchorPane{
 			}
 		});
 	}
-
+	@FXML
+	private void closeProject(ActionEvent event){
+		 Platform.exit();
+		 System.exit(0);
+	}
+	
+	@FXML
+	private void saveProject(ActionEvent event){
+		System.out.print("jhfsjf");
+	}
+	
 	private void buildDragHandlers() {
 
 		//drag over transition to move widget form left pane to right pane
